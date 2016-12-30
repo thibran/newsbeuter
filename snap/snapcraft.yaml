@@ -6,13 +6,13 @@ description: |
   Newsbeuter is an RSS feed reader for the text console.
   Zed Shaw called it "The Mutt of Feed Readers".
 
-grade: devel        # stable
+grade: devel        # stable devel
 confinement: strict # strict devmode
 
 apps:
   newsbeuter:
     command: bin/launcher.sh newsbeuter
-    plugs: [network, home]
+    plugs: [network]
   podbeuter:
     command: bin/launcher.sh podbeuter
     plugs: [network]
