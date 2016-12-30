@@ -1,13 +1,13 @@
 # http://snapcraft.io/docs/reference/
 name: newsbeuter
-version: 0.1 # 2.9
+version: '2.10'
 summary: RSS feed reader for the text console
 description: |
   Newsbeuter is an RSS feed reader for the text console.
   Zed Shaw called it "The Mutt of Feed Readers".
 
-grade: devel         # stable
-confinement: devmode # strict devmode
+grade: devel        # stable
+confinement: strict # strict devmode
 
 apps:
   newsbeuter:
