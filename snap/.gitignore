@@ -1,0 +1,7 @@
+# build directories
+parts/
+prime/
+stage/
+
+# snap package
+newsbeuter_*.snap

@@ -1,0 +1,45 @@
+# http://snapcraft.io/docs/reference/
+name: newsbeuter
+version: 0.1 # 2.9
+summary: RSS feed reader for the text console
+description: |
+  Newsbeuter is an RSS feed reader for the text console.
+  Zed Shaw called it "The Mutt of Feed Readers".
+
+grade: devel         # stable
+confinement: devmode # strict devmode
+
+apps:
+  newsbeuter:
+    command: bin/launcher.sh newsbeuter
+    plugs: [network, home]
+  podbeuter:
+    command: bin/launcher.sh podbeuter
+    plugs: [network]
+
+parts:
+  newsbeuter:
+    plugin: make
+    source: ../
+    build-packages:
+      - build-essential
+      - libsqlite3-dev       # sqlite3
+      - libcurl4-openssl-dev # libcurl
+      - libxml2-dev          # libxml
+      - libjson-c-dev        # json-c
+      - libjson-glib-dev     # json
+      - libncursesw5-dev     # ncursesw
+      - libstfl-dev          # stfl
+      - libssl-dev           # libcrypto
+    organize:
+      usr/local/bin/newsbeuter: bin/newsbeuter
+      usr/local/bin/podbeuter: bin/podbeuter
+    snap:
+      - -usr/local/share/doc
+      - -usr/local/share/man
+      - -usr/local/bin
+
+  launcher:
+    plugin: dump
+    organize:
+      launcher.sh: bin/launcher.sh
