@@ -11,10 +11,10 @@ confinement: strict # strict devmode
 
 apps:
   newsbeuter:
-    command: bin/launcher.sh newsbeuter
+    command: env LOCPATH=$SNAP/usr/lib/locale newsbeuter
     plugs: [network]
   podbeuter:
-    command: bin/launcher.sh podbeuter
+    command: env LOCPATH=$SNAP/usr/lib/locale podbeuter
     plugs: [network]
 
 parts:
@@ -34,12 +34,11 @@ parts:
     organize:
       usr/local/bin/newsbeuter: bin/newsbeuter
       usr/local/bin/podbeuter: bin/podbeuter
+    stage-packages:
+      - locales-all          # without it gettext doesn't work #LP 1576282
     snap:
+      - -usr/local/bin
       - -usr/local/share/doc
       - -usr/local/share/man
-      - -usr/local/bin
+      - -usr/share
 
-  launcher:
-    plugin: dump
-    organize:
-      launcher.sh: bin/launcher.sh

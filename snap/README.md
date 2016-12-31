@@ -10,7 +10,6 @@ TODO
 * What about the config `browser` setting, can it be supported or do we need to ship a CLI browser?
 * What about the config `player` setting, can it be supported?
 * Check if podbeuter works as expected.
-* Fix that `LANG="C.UTF-8"` must be set in `launcher.sh`.
 
 
 Quick Snapcraft introduction
