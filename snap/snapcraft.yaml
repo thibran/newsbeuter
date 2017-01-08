@@ -1,6 +1,7 @@
 # http://snapcraft.io/docs/reference/
 name: newsbeuter
 version: '2.10'
+icon: icon.png
 summary: RSS feed reader for the text console
 description: |
   Newsbeuter is an RSS feed reader for the text console.
@@ -34,6 +35,7 @@ parts:
     organize:
       usr/local/bin/newsbeuter: bin/newsbeuter
       usr/local/bin/podbeuter: bin/podbeuter
+
     stage-packages:
       - locales-all          # without it gettext doesn't work #LP 1576282
     snap:
@@ -42,3 +44,8 @@ parts:
       - -usr/local/share/man
       - -usr/share
 
+  desktopfile:
+    plugin: dump
+    source: misc
+    organize:
+      newsbeuter.desktop: meta/gui/newsbeuter.desktop

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Newsbeuter
+Exec=newsbeuter %U
+Icon=/snap/newsbeuter/current/meta/gui/icon.png
+Terminal=true
+Categories=Network;
+Type=Application
+Version=$SNAP_VERSION
